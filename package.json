@@ -4,8 +4,7 @@
   "description": "Web scraper to search available appointments in specific medical centers",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon index.js",
-    "start": "NODE_OPTIONS='--experimental-specifier-resolution=node' node index.js"
+    "start": "NODE_OPTIONS='--experimental-specifier-resolution=node' nodemon index.js"
   },
   "type": "module",
   "keywords": [],
