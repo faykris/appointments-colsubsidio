@@ -31,7 +31,7 @@ for (let mc in mc_dict) {
         // Validate medical center in morning schedule
         console.log(`Validate in ${mc_dict[mc]}, morning schedule...`);
         const m_json = await calendar_validator(auth.refreshToken, morning, mc);
-        if (m_json.resultado.length !== 0) console.log(m_json.resultado[0].descripcion);
+        if (m_json.resultado.length !== 0) console.log(":( -", m_json.resultado[0].descripcion);
         else if ((m_json.disponibilidad !== undefined) && (m_json.disponibilidad.length !== 0)) {
             console.log(m_json.disponibilidad);
             await send_email(morning, mc_dict[mc], m_json.disponibilidad);
@@ -40,7 +40,7 @@ for (let mc in mc_dict) {
         // Validate medical center in afternoon schedule
         console.log(`Validate in ${mc_dict[mc]}, afternoon schedule...`);
         const t_json = await calendar_validator(auth.refreshToken, afternoon, mc);
-        if (t_json.resultado.length !== 0) console.log(t_json.resultado[0].descripcion);
+        if (t_json.resultado.length !== 0) console.log(":( -", t_json.resultado[0].descripcion);
         else if ((t_json.disponibilidad !== undefined) && (t_json.disponibilidad.length !== 0)) {
             console.log(t_json.disponibilidad);
             await send_email(afternoon, mc_dict[mc], t_json.disponibilidad);
